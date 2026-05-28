@@ -1,40 +1,73 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Jerusalem Project<title>
-
-<style>
-body {
-    background-color: white;
-    font-family: Arial;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.header {
-    color: blue;
-    text-align: center;
+.button:hover {
+    transform: scale(1.05);
 }
 
-.image-box {
-    width: 300px;
-    height: 200px;
-    border: 3px solid gold;
+.language-buttons {
+    margin-bottom: 20px;
 }
 </style>
 </head>
 
 <body>
 
-</h1> class="header">Jerusalem And Its Sites</h2>
+<div class="language-buttons">
+    <button class="button" onclick="changeLanguage('english')">English</button>
+    <button class="button" onclick="changeLanguage('hebrew')">עברית</button>
+    <button class="button" onclick="changeLanguage('ukrainian')">Українська</button>
+</div>
 
-<p>Jerusalem is one of the oldest city in the world.
+<h1 class="header" id="title">Jerusalem And Its Sites</h1>
 
-<img src="jerusalem.jpg" class="image-box">
+<p class="text" id="description">
+Jerusalem is one of the oldest cities in the world.
+It contains famous places such as the Western Wall,
+Mahane Yehuda Market, and the Old City.
+</p>
 
-<button onclick="showMessage">Click Me</button>
+<div class="gallery">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Jerusalem_night_7088.JPG" class="image-box" alt="Jerusalem">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Westernwall2.jpg" class="image-box" alt="Western Wall">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Jerusalem_Mahane_Yehuda_Market.jpg" class="image-box" alt="Market">
+</div>
+
+<br>
+
+<button class="button" onclick="showMessage()">Click Me</button>
 
 <script>
 function showMessage() {
-    alert("Welcome to Jerusalem Project!")
+    alert("Welcome to the Jerusalem Project!");
+}
+
+function changeLanguage(language) {
+
+    if(language === 'english') {
+        document.getElementById('title').innerHTML = 'Jerusalem And Its Sites';
+
+        document.getElementById('description').innerHTML =
+        'Jerusalem is one of the oldest cities in the world. It contains famous places such as the Western Wall, Mahane Yehuda Market, and the Old City.';
+    }
+
+    if(language === 'hebrew') {
+        document.getElementById('title').innerHTML = 'ירושלים ואתריה';
+
+        document.getElementById('description').innerHTML =
+        'ירושלים היא אחת הערים העתיקות בעולם. בעיר נמצאים אתרים מפורסמים כמו הכותל המערבי, שוק מחנה יהודה והעיר העתיקה.';
+    }
+
+    if(language === 'ukrainian') {
+        document.getElementById('title').innerHTML = 'Єрусалим та його пам’ятки';
+
+        document.getElementById('description').innerHTML =
+        'Єрусалим — одне з найстаріших міст у світі. Тут знаходяться відомі місця, такі як Стіна Плачу, ринок Махане Єгуда та Старе місто.';
+    }
 }
 </script>
 
