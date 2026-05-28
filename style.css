@@ -1,7 +1,11 @@
 body {
     margin: 0;
     font-family: Arial;
-    background-color: #0f172a;
+
+    /* ERROR 5:
+    missing semicolon */
+
+    background-color: #0f172a
     color: white;
 }
 
@@ -9,23 +13,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0038b8;
+    background: blue;
     padding: 20px;
-}
-
-#langBtn {
-    background: white;
-    color: blue;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.hero {
-    text-align: center;
-    padding: 100px;
-    background: linear-gradient(to right, #0038b8, #0ea5e9);
 }
 
 .cards {
@@ -37,24 +26,30 @@ nav {
     width: 300px;
     background: white;
     color: black;
-    margin: 20px;
+
+    /* ERROR 6:
+    missing semicolon */
+
+    margin: 20px
+
     padding: 20px;
     border-radius: 15px;
-    transition: 0.3s;
 }
 
 .card img {
-    width: 100%;
+
+    /* ERROR 7:
+    image too large */
+
+    width: 500px;
+
     height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
 }
 
 .card:hover {
-    transform: scale(1.05)
-}
 
-.reflection {
-    text-align: center;
-    padding: 40px;
+    /* ERROR 8:
+    animation not smooth */
+
+    transform: scale(1.1)
 }
